@@ -24,5 +24,6 @@ private String email;
 
 private String password;
 
-private String role;
+ @Column(nullable = false)
+    private String role = "USER";
 }
