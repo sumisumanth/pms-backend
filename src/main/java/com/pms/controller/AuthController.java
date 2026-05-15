@@ -21,9 +21,22 @@ public class AuthController {
     /* REGISTER */
 
     @PostMapping("/register")
-    public User register(@RequestBody User user){
+public User register(@RequestBody User user){
+
+    try {
+
+        System.out.println("REGISTER REQUEST RECEIVED");
+        System.out.println(user.getEmail());
+
         return authService.register(user);
+
+    } catch (Exception e){
+
+        e.printStackTrace();
+
+        throw new RuntimeException(e.getMessage());
     }
+}
 
     /* LOGIN */
 
